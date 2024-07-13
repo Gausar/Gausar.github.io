@@ -1,0 +1,23 @@
+<div class="author">
+    <h1 class="author__heading">Hi &#128075; , I am Gausar.</h1>
+    <p class="author__body">Machine learning engineer and computer scientist.</p>
+</div>
+<img src="/img/gausar.jpg" alt="Photo of Gausar" class="hero-image" width="900" height="500">
+
+<section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+    <ul class="articles-ul">
+        <% data.forEach(post => { %>
+        <li>
+            <a href="/post/<%= post._id %>">
+                <span><%= post.title %></span>
+                <span class="articles-list__date"><%= post.createdAt.toDateString() %></span>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+    <% if ( nextPage !== null){ %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; View older posts</a>
+    <% } %>
+    
+</section>
